@@ -1,0 +1,9 @@
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown();
+    $('select').formSelect();
+    $('.count').characterCounter();
+    $('.fixed-action-btn').floatingActionButton();
+    $('.tooltipped').tooltip();
+    $('.tap-target').tapTarget();
+});

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>eResources Management</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="icon" href="/eresource/assets/images/favicon.ico" sizes="16x16" type="image/ico">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="/eresource/assets/materialize/css/materialize.min.css"  media="screen,projection"/>
+        <link href="/eresource/assets/icons/css/all.css" rel="stylesheet">
+        <link href="/eresource/assets/icons/css/fontawesome.css" rel="stylesheet">
+        <link href="/eresource/assets/icons/css/solid.css" rel="stylesheet">
+        <style>
+            body {
+                background-color: #f0f0f0;
+            }
+            .main {
+                padding: 0 10px;
+            }
+            .name {
+                font-weight: bold;
+            }
+            img {
+                pointer-events: none;
+            }
+            table, th, td {
+                border: 1px solid !important;
+                border-collapse: collapse;
+            }
+
+            </style>
+    </head>
+    <body>
+        <div class="navbar-fixed z-depth-3">
+            <nav>
+                <div class="red darken-2 nav-wrapper">
+                    <a href="#!" class="brand-logo" title="ICSC eResources"><img src="/eresource/assets/images/icsc-logo.png" style="padding-left:10px; margin-top:10px; width:200px; height:40px;"></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="DeptLogin.php" target="_blank">Department</a></li>
+                        <li><a href="candidate" target="_blank">Student</a></li>
+                        <li><a href="#about">About Project</a></li>
+                        <li><a href="#distribution">Work Distribution</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    
+        <div class="row indigo accent-2 center" style="padding:10px;">
+            <div class="container">
+                <ul style="font-size:30px;">
+                    <li class="col s12 m6 l6" style="padding-bottom:10px;"><a href="DeptLogin.php" class="white-text" title="Department Login" target="_blank"><i class="fa-solid fa-building-user"></i> <strong>Department</strong></a></li>
+                    <li class="col s12 m6 l6" style="padding-bottom:10px;"><a href="candidate" class="white-text" title="Student Login" target="_blank"><i class="fa-solid fa-graduation-cap"></i> <strong>Student</strong></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="row">
+                <img class="col s6 m6 l6" src="./assets/images/file-bundle.svg" >
+                <img class="col s6 m6 l6" src="./assets/images/docs.svg">
+            </div>
+
+            <div class="row purple lighten-5" style="border-radius:2px" id="about">
+                <h4 class="purple accent-4 white-text" style="padding:10px 0 10px 10px; border-radius:2px;">About Project</h4>
+                <p style="font-size: large;">The project <strong>&quot;COLLEGE E-RESOURCE SYSTEM&quot;</strong> deals with the idea 
+                of uploading data like previous year <em>question papers</em>, <em>syllabuses</em> 
+                etc. by the faculty members which will be available for the students 
+                to help them in the learning process. The students will be able to login 
+                with the help of login credentials provided to them by the admin and 
+                then they can download the e-resources. The main aim of the project is 
+                to make a hassle-free learning process for both faculty as well as the 
+                students. The faculty member can upload all the important resources which 
+                will be beneficial for the student and those resources can be accessed by 
+                the student any time throughout the semester.</p>
+            </div>
+
+            <div class="row cyan lighten-5" style="border-radius:2px" id="distribution">
+                <h4 class="cyan accent-4 white-text" style="padding:10px 0 10px 10px; border-radius:2px;">Work Distribution</h4>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll no.</th>
+                        <th>Work</th>
+                    </tr>
+                    <tr>
+                        <td class="name">Mohammad Hanan</td>
+                        <td>19550076</td>
+                        <td>Back-end development (PHP & MySQL)</td>
+                    </tr>
+                    <tr>
+                        <td class="name">Qazi Arsalan</td>
+                        <td>19550060</td>
+                        <td>Front-end (HTML,CSS,JAVASCRIPT)</td>
+                    </tr>
+                    <tr>
+                        <td class="name">Noorullah Shiekh</td>
+                        <td>19550046</td>
+                        <td>Front-end (HTML,CSS,JAVASCRIPT)</td>
+                    </tr>
+                    <tr>
+                        <td class="name">Sehrab</td>
+                        <td>19550072</td>
+                        <td>Requirement Gathering & Analysis.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <footer class="indigo darken-2 page-footer" style="margin-top:20px">
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="center">Designed &amp; Developed by <strong>Group-7 Batch 2019</strong></div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
