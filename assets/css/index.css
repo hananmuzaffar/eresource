@@ -1,0 +1,27 @@
+body {
+    background-color: #f0f0f0;
+}
+.main {
+    padding: 0 10px;
+}
+.name {
+    font-weight: bold;
+}
+img {
+    pointer-events: none;
+}
+table, th, td {
+    border: 1px solid !important;
+    border-collapse: collapse;
+}
+th {
+    background-color: #00B8D4;
+}
+.contentBox {
+    border-radius: 2px;
+}
+.contentHeading {
+    padding: 10px 0 10px 10px;
+    border-radius: 2px;
+    color: #ffffff;
+}
