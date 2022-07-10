@@ -12,7 +12,7 @@ require "../process/functions.php" ?>
     <form class="col s12" id="form" action="../process/paper-add-process.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="input-field col s12">
-            <input type="text" class="validate" id="name" name="name"  placeholder="Enter Paper Title" required />
+            <input type="text" class="validate" id="name" name="name" placeholder="Enter Paper Title" autofocus required />
           <label for="name">Paper Title</label>
         </div>
       </div>

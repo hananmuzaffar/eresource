@@ -31,6 +31,10 @@
         <li><a href="/eresource/users/manage-user.php"><i class="fas fa-users left fa-lg white-text"></i><span>View Users</span></a></li>
     </ul>
     <?php endif; ?>
+    <ul id="noticedropdown" class="dropdown-content teal lighten-2">
+        <li><a href="/eresource/noticeboard/add-notice.php"><i class="fas fa-bell left fa-lg white-text"></i><span>Add new Notice</span></a></li>
+        <li><a href="/eresource/noticeboard/manage-notice.php"><i class="fas fa-bell left fa-lg white-text"></i><span>View Notices</span></a></li>
+    </ul>
     <!-- Mobile Dropdown content -->
     <ul id="syllabusdropdown" class="dropdown-content teal lighten-2">
         <li><a href="/eresource/syllabus/add-syllabus.php"><i class="fas fa-print left fa-lg white-text"></i><span>Add new Syllabus</span></a></li>
@@ -49,8 +53,13 @@
         <li><a href="/eresource/users/add-user.php"><i class="fas fa-users left fa-lg white-text"></i><span>Add new User</span></a></li>
         <li><a href="/eresource/users/manage-user.php"><i class="fas fa-users left fa-lg white-text"></i><span>View Users</span></a></li>
     </ul>
-    <?php endif;?>  
+    <?php endif;?> 
+    <ul id="noticedropdown" class="dropdown-content teal lighten-2">
+        <li><a href="/eresource/noticeboard/add-notice.php"><i class="fas fa-bell left fa-lg white-text"></i><span>Add new Notice</span></a></li>
+        <li><a href="/eresource/noticeboard/manage-notice.php"><i class="fas fa-bell left fa-lg white-text"></i><span>View Notices</span></a></li>
+    </ul> 
     <!-- Dropdown content end -->
+
     <?php $site_logo = "/eresource/assets/images/icsc-logo.png" ?>
     <div class="navbar-fixed z-depth-3">
         <nav class="blue">
@@ -74,6 +83,8 @@
                         <li><a class="dropdown-trigger" href="#!" data-target="studentdropdown"><i class="fas fa-graduation-cap left fa-lg"></i><span>Students</span><i class="material-icons right">arrow_drop_down</i></a></li>
                         <li><a class="dropdown-trigger" href="#!" data-target="userdropdown"><i class="fas fa-users left fa-lg"></i><span>Users</span><i class="material-icons right">arrow_drop_down</i></a></li>
 				        <?php endif; ?>
+                        <li><div class="divider"></div></li>
+                        <li><a class="dropdown-trigger" href="#!" data-target="noticedropdown"><i class="fas fa-bell left fa-lg"></i><span>Noticeboard</span><i class="material-icons right">arrow_drop_down</i></a></li>
                         <li><div class="divider"></div></li>
 				        <li><a href="/eresource/reset-password.php"><i class="fas fa-lock left fa-lg"></i><span>Change Password</span></a></li>
 				        <li><a href="/eresource/logout.php"><i class="fas fa-sign-out-alt left fa-lg"></i><span>Logout</span></a></li>
@@ -100,6 +111,8 @@
         <li><a class="dropdown-trigger" href="#!" data-target="studentdropdown"><i class="fas fa-graduation-cap left fa-lg"></i><span>Students</span><i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a class="dropdown-trigger" href="#!" data-target="userdropdown"><i class="fas fa-users left fa-lg"></i><span>Users</span><i class="material-icons right">arrow_drop_down</i></a></li>
 		<?php endif; ?>
+        <li><div class="divider"></div></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="noticedropdown"><i class="fas fa-bell left fa-lg"></i><span>Noticeboard</span><i class="material-icons right">arrow_drop_down</i></a></li>
         <li><div class="divider"></div></li>
         <li><a href="/eresource/reset-password.php"><i class="fas fa-lock left fa-lg"></i><span>Change Password</span></a></li>
         <li><a href="/eresource/logout.php"><i class="fas fa-sign-out-alt left fa-lg"></i><span>Logout</span></a></li>

@@ -13,7 +13,7 @@ if($_SESSION["isAdmin"] == 1): ?>
     <form class="col s12" id="form" action="../process/user-add-process.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="input-field col s12">
-            <input type="text" class="validate" id="name" name="name"  placeholder="Enter name" required />
+            <input type="text" class="validate" id="name" name="name"  placeholder="Enter name" autofocus required />
           <label for="name">Name</label>
         </div>
       </div>

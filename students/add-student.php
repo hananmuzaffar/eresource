@@ -16,7 +16,7 @@ include '../process/functions.php'; ?>
             
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" class="validate" id="name" name="name"  placeholder="Enter student name" required />
+                  <input type="text" class="validate" id="name" name="name" placeholder="Enter student name" autofocus required />
                   <label for="name">Student name</label>
                 </div>
               </div>

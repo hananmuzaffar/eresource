@@ -81,7 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
             <div class="input-field col s12 <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
                 <i class="fas fa-key prefix"></i>
-                <input type="password" name="new_password" class="validate" id="new_password" value="<?php echo $new_password; ?>">
+                <input type="password" name="new_password" class="validate" id="new_password" value="<?php echo $new_password; ?>" autofocus>
                 <label for="new_password">New Password</label>
                 <span class="help-block red-text"><?php echo $new_password_err; ?></span>
             </div>
