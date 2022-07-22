@@ -7,3 +7,7 @@ $(document).ready(function(){
     $('.tooltipped').tooltip();
     $('.tap-target').tapTarget();
 });
+
+var today = new Date();
+var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+document.querySelector("#date").innerHTML = date

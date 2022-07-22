@@ -19,11 +19,12 @@ $result = $link->query($sql);
         <h4 class="center">Search Results for <strong><?php echo $_GET["search"]; ?></strong></h4>
     </div>
 <?php include_once '../includes/user-search-form.php' ?>
-<table>
+<table class="centered">
 <tr>
     <th hidden>ID</th>
     <th>Name</th>
     <th>Department</th>
+    <th colspan="3">Action</th>
 </tr>
     </thead>
 <?php 

@@ -1,10 +1,10 @@
-<?php include '../candidate/stu-process/stu-auth.php';?>
+<?php require_once "../candidate/stu-process/stu-auth.php";?>
 <!DOCTYPE HTML>
 <html>
 <head>
 <title>Papers</title>
-<?php include_once 'stu-includes/stu-nav.php' ?>
-<?php include "../process/db.php" ?>
+<?php include_once "stu-includes/stu-nav.php" ?>
+<?php require_once "../process/db.php" ?>
 <div class="container">
     <div class="row">
         <h3 class="center">Papers</h3>

@@ -1,5 +1,5 @@
-<?php require '../candidate/stu-process/stu-auth.php';
-require '../process/db.php';
+<?php require_once "../candidate/stu-process/stu-auth.php";
+require_once "../process/db.php";
  
 // Define variables and initialize with empty values
 $new_password = $confirm_password = "";

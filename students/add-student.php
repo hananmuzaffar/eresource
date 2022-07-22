@@ -57,20 +57,8 @@ include '../process/functions.php'; ?>
                 </div>
               </div>
 
-              <div class="row">
-                <div class="input-field col s12">
-                  <select name="batch" id="batch" required>
-                    <option value="" disabled selected>-- select batch --</option>
-                    <?php
-                    $batch_sql = mysqli_query($link, "SELECT * From batch");
-                    $batch_row = mysqli_num_rows($batch_sql);
-                    while ($batch_row = mysqli_fetch_array($batch_sql)){
-                      echo "<option value='". $batch_row['batch_id'] ."'>" .$batch_row['batch_name'] ."</option>" ;
-                    } ?>
-                  </select>
-                  <label for="batch">Select Batch:</label>
-                </div>
-              </div>
+              <!-- Batch Function -->
+              <?php batch(); ?>
 
               <div class="row">
                 <div class="input-field col s12">

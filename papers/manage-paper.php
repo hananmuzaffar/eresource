@@ -27,6 +27,7 @@ $rs_result = $link->query($sql);
             <th>Year</th>
             <th>Uploaded by</th>
             <th>Uploaded on</th>
+            <th colspan="2">Action</th>
         </tr>
     </thead>
 <?php while($row = $rs_result->fetch_assoc()): ?> 
@@ -36,11 +37,7 @@ $rs_result = $link->query($sql);
 
             <td><?php echo $row["paper_name"]; ?></td>
 
-            <td><?php
-                $batch_sql = mysqli_query($link, "SELECT * From batch JOIN papers ON batch.batch_id = papers.batch_id WHERE paper_id=".$row['paper_id']);
-                $batch_row = mysqli_fetch_array($batch_sql);
-                echo $batch_row['batch_name'];
-            ?></td>
+            <td><?php echo $row['batch']; ?></td>
 
             <td><?php
             $course_sql = mysqli_query($link, "SELECT * From courses JOIN papers ON courses.course_id = papers.course_id WHERE paper_id=".$row['paper_id']);

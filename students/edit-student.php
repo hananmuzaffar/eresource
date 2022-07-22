@@ -1,6 +1,7 @@
 <?php
-require("../process/db.php");
-include("../process/auth.php");
+require_once"../process/db.php";
+require_once"../process/auth.php";
+include_once"../process/functions.php";
 $rollno=$_REQUEST['rollno'];
 $query = "SELECT * from students where stu_rollno=$rollno"; 
 $result = mysqli_query($link, $query) or die ( mysqli_connect_error());
@@ -20,8 +21,9 @@ if(isset($_POST['new']) && $_POST['new']==1)
 {
 $name = $_REQUEST['name'];
 $course = $_REQUEST['course'];
+$batch = $_REQUEST['batch'];
 
-$update="UPDATE students SET stu_name = '$name', course_id = '$course' WHERE stu_rollno = '$rollno'";
+$update="UPDATE students SET stu_name = '$name', course_id = '$course' , batch = '$batch' WHERE stu_rollno = '$rollno'";
 mysqli_query($link, $update);
 $status = "Record Updated Successfully. </br></br>
 <a href='../students/manage-student.php'>View Updated Record</a>";
@@ -65,21 +67,7 @@ echo '<p style="color:#FF0000;">'.$status.'</p>';
         </div>
     </div>
   
-    <div class="row">
-        <div class="input-field col s12">
-          <select name="batch" id="batch" required>
-              <?php $batch_sql = mysqli_query($link, "SELECT * From batch JOIN students ON batch.batch_id = students.batch_id WHERE stu_rollno=$rollno");
-                $batch_row = mysqli_fetch_array($batch_sql);
-            echo "<option value=".$batch_row['batch_id']." disabled selected>".$batch_row['batch_name']."</option>";
-              while ($batch_row = mysqli_fetch_array($batch_sql)){
-                echo "<option value=".$batch_row['batch_id'].">".$batch_row['batch_name']."</option>" ;
-              }
-            ?>
-          </select>
-          <label for="batch">Select Batch:</label>
-          <code class="red-text">Cannot be edited.</code>
-        </div>
-    </div>
+    <?php batch(); ?>
     
 <div class="row">
           <button class="btn waves-effect waves-light" type="submit" value="Update">Update

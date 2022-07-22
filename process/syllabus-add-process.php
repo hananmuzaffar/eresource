@@ -31,7 +31,7 @@ $uploaded_on = date("Y-m-d");
 include_once 'db.php';
 
 //insert form data in the database
-$insert = $link->query("INSERT INTO syllabus (syllabus_name,batch_id,course_id,syllabus_file,user_id,syl_uploaded_on) VALUES ('".$name."','".$batch."','".$course."','".$path."','".$uploader."','".$uploaded_on."')");
+$insert = $link->query("INSERT INTO syllabus (syllabus_name,batch,course_id,syllabus_file,user_id,syl_uploaded_on) VALUES ('".$name."','".$batch."','".$course."','".$path."','".$uploader."','".$uploaded_on."')");
 header('Location: ../syllabus/manage-syllabus.php');
 }
 } 

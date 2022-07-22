@@ -44,7 +44,7 @@ include './process/db.php';
                 $sql = ($_SESSION["isAdmin"] == 1) ? "SELECT * FROM papers" : "SELECT * FROM papers WHERE user_id = ".$_SESSION['user_id'];
                 $count = mysqli_num_rows(mysqli_query($link,$sql)); 
             ?>
-            <a href="./papers/manage-paper.php"><div class="col s12 m6 l6 card-panel hoverable orange lighten-4 collection-item orange-text text-darken-3 z-depth-2"><i class="fas fa-solid fa-print fa-lg"></i> <span style='font-size:1.25rem'>Total Papers Uploaded</span><p style='font-size: 2rem;'><strong><?php echo $count; ?></strong></p></div></a>
+            <a href="./papers/manage-paper.php"><div class="col s12 m6 l6 card-panel hoverable orange lighten-4 collection-item orange-text text-darken-3 z-depth-2"><i class="fas fa-solid fa-file-circle-question fa-lg"></i> <span style='font-size:1.25rem'>Total Papers Uploaded</span><p style='font-size: 2rem;'><strong><?php echo $count; ?></strong></p></div></a>
         </div>
     </div><br>
     <?php include_once './includes/add_button.php' ?>

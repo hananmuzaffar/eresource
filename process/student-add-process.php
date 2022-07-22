@@ -13,7 +13,7 @@ $param_password = password_hash($password, PASSWORD_DEFAULT);
 include_once 'db.php';
 
 //insert form data in the database
-$insert = $link->query("INSERT INTO students (stu_name,stu_rollno,stu_phone,stu_address,course_id,batch_id,stu_password) VALUES ('".$name."','".$rollno."','".$phone."','".$address."','".$course."','".$batch."','".$param_password."')");
+$insert = $link->query("INSERT INTO students (stu_name,stu_rollno,stu_phone,stu_address,course_id,batch,stu_password) VALUES ('".$name."','".$rollno."','".$phone."','".$address."','".$course."','".$batch."','".$param_password."')");
 header('Location: ../students/manage-student.php');
 }
 else header('Location: ../index.php');

@@ -11,6 +11,6 @@ $uploaded_on = date("Y-m-d");
 include_once 'db.php';
 
 //insert form data in the database
-$insert = $link->query("INSERT INTO notices (notice,batch_id,course_id,user_id,notice_uploaded_on) VALUES ('".$title."','".$batch."','".$course."','".$uploader."','".$uploaded_on."')");
+$insert = $link->query("INSERT INTO notices (notice,batch,course_id,user_id,notice_uploaded_on) VALUES ('".$title."','".$batch."','".$course."','".$uploader."','".$uploaded_on."')");
 header('Location: ../noticeboard/manage-notice.php');
 ?>

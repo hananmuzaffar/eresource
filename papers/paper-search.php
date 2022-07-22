@@ -8,8 +8,8 @@
 <?php
 $sql = "SELECT * FROM papers";
 if( isset($_GET['search']) ){
-    $name  = $year = mysqli_real_escape_string($link, htmlspecialchars($_GET['search']));
-    $sql = "SELECT * FROM papers WHERE paper_name LIKE '%$name%' or exam_year LIKE '%$year'";
+    $name  = $year = $batch = mysqli_real_escape_string($link, htmlspecialchars($_GET['search']));
+    $sql = "SELECT * FROM papers WHERE paper_name LIKE '%$name%' OR exam_year LIKE '%$year' OR batch LIKE '%$batch'";
 }
 $result = $link->query($sql);
 ?>
@@ -29,6 +29,7 @@ $result = $link->query($sql);
             <th>Year</th>
             <th>Uploaded by</th>
             <th>Uploaded on</th>
+            <th colspan="2">Action</th>
         </tr>
     </thead>
 <?php while($row = $result->fetch_assoc()): ?> 
@@ -38,11 +39,7 @@ $result = $link->query($sql);
 
             <td><?php echo $row["paper_name"]; ?></td>
 
-            <td><?php
-                $batch_sql = mysqli_query($link, "SELECT * From batch JOIN papers ON batch.batch_id = papers.batch_id WHERE paper_id=".$row['paper_id']);
-                $batch_row = mysqli_fetch_array($batch_sql);
-                echo $batch_row['batch_name'];
-            ?></td>
+            <td><?php echo $row['batch']; ?></td>
 
             <td><?php
             $course_sql = mysqli_query($link, "SELECT * From courses JOIN papers ON courses.course_id = papers.course_id WHERE paper_id=".$row['paper_id']);
@@ -62,9 +59,8 @@ $result = $link->query($sql);
 
             <td><?php $paper_uploaded_on= date('d/m/Y',strtotime($row['paper_uploaded_on'])); 
             echo $paper_uploaded_on;
-            ?><td>
+            ?></td>
 
-            <!-- <td><?php //echo "<a href='./edit-paper.php?id=" . $row['paper_id'] ."'><i class='fa-solid fa-pen-to-square tooltipped' data-position='top' data-tooltip='Edit'></i></a>";?></td> -->
             <td><?php echo "<a href='".$row['paper_file']."?id=" . $row['paper_id'] ."' target='_blank'><i class='fa-solid fa-eye tooltipped' data-position='top' data-tooltip='View'></i></a>";?></td>
             <td><?php echo "<a href='./delete-paper.php?id=" . $row['paper_id'] ."'><i class='fa-solid fa-trash-can tooltipped red-text' data-position='top' data-tooltip='Delete'></i></a>";?></td>
         </tr>

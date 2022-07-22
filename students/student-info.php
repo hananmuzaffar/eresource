@@ -32,9 +32,7 @@ $sql = "SELECT * FROM students WHERE stu_rollno= $rollno";
                 $course_row = mysqli_fetch_array($course_sql);
                 echo '<br><font style="font-size:20px"><b>Course: </b></font>' . $course_row['course_name'];
 
-                $batch_sql = mysqli_query($link, "SELECT * From batch JOIN students ON batch.batch_id = students.batch_id WHERE stu_rollno=$rollno");
-                $batch_row = mysqli_fetch_array($batch_sql);
-                echo '<br><font style="font-size:20px"><b>Batch: </b></font>' . $batch_row['batch_name'];
+                echo '<br><font style="font-size:20px"><b>Batch: </b></font>' . $row['batch'];
 
                 echo '</fieldset>
                 </div>';

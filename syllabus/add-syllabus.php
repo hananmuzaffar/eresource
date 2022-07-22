@@ -1,5 +1,6 @@
-<?php include "../process/auth.php";
-require "../process/db.php";?>
+<?php require_once "../process/auth.php";
+require_once "../process/db.php";
+include_once "../process/functions.php"?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -32,21 +33,8 @@ require "../process/db.php";?>
         </div>
     </div>
 
-    <div class="row">
-        <div class="input-field col s12">
-          <select name="batch" id="batch" required>
-            <option value="" disabled selected>-- select batch --</option>
-            <?php
-              $batch_sql = mysqli_query($link, "SELECT * From batch");
-              $batch_row = mysqli_num_rows($batch_sql);
-              while ($batch_row = mysqli_fetch_array($batch_sql)){
-                echo "<option value='". $batch_row['batch_id'] ."'>" .$batch_row['batch_name'] ."</option>" ;
-              }
-            ?>
-          </select>
-          <label for="batch">Select Batch:</label>
-        </div>
-    </div>
+    <!-- Batch Function -->
+    <?php batch(); ?>
        
     <div class="row">
         <div class="file-field input-field col s12 ">
@@ -60,27 +48,6 @@ require "../process/db.php";?>
             </div>
         </div>
     </div>
-
-   <!-- <div class="row">
-        <div class="input-field col s12">
-            <select name="uploader" id="uploader" required>
-                <?php
-                /* $uploader_sql = mysqli_query($link, "SELECT * FROM users");
-                $uploader_row = mysqli_num_rows($uploader_sql);
-                if($_SESSION['isAdmin'] != 1) {
-                    echo "<option value='". $_SESSION['user_id'] ."' disabled selected>". $_SESSION['name'] ."</option>";
-                }
-                else {
-                    echo "<option value='". $_SESSION['user_id'] ."' disabled selected>". $SESSION['name'] ."</option>";
-                    while ($uploader_row = mysqli_fetch_array($uploader_sql)){
-                        echo "<option value='". $uploader_row['user_id'] ."'>" .$uploader_row['name'] ."</option>" ;
-                    }
-                } */
-                ?>
-            </select>
-            <label for="uploader">Uploaded by</label>
-        </div>
-    </div> -->
     
       <div class="row">
           <button class="btn waves-effect waves-light" type="submit" value="Upload">Add

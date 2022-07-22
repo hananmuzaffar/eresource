@@ -1,6 +1,6 @@
-<?php include "../process/auth.php";
-require "../process/db.php";
-require "../process/functions.php" ?>
+<?php include_once "../process/auth.php";
+require_once "../process/db.php";
+include_once "../process/functions.php" ?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -46,23 +46,10 @@ require "../process/functions.php" ?>
         </div>
     </div>
 
-    <div class="row">
-        <div class="input-field col s12">
-          <select name="batch" id="batch" required>
-            <option value="" disabled selected>-- select batch --</option>
-            <?php
-              $batch_sql = mysqli_query($link, "SELECT * FROM batch");
-              $batch_row = mysqli_num_rows($batch_sql);
-              while ($batch_row = mysqli_fetch_array($batch_sql)){
-                echo "<option value='". $batch_row['batch_id'] ."'>" .$batch_row['batch_name'] ."</option>" ;
-              }
-            ?>
-          </select>
-          <label for="batch">Select Batch:</label>
-        </div>
-    </div>
+    <!-- Batch Function -->
+    <?php batch(); ?>
     
-    <!-- year function -->
+    <!-- Year Function -->
     <?php year(); ?>
 
     <div class="row">

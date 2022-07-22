@@ -23,6 +23,7 @@ $rs_result = $link->query($sql);
     <th>Student name</th>
     <th>Course</th>
     <th>Batch</th>
+    <th colspan="3">Action</th>
 </tr>
     </thead>
 <?php 
@@ -39,11 +40,7 @@ $rs_result = $link->query($sql);
                 echo $course_row['course_name'];
                 ?></td>
 
-            <td><?php
-              $batch_sql = mysqli_query($link, "SELECT * From batch JOIN students ON batch.batch_id = students.batch_id WHERE stu_rollno=".$row['stu_rollno']);
-              $batch_row = mysqli_fetch_array($batch_sql);
-                echo $batch_row['batch_name'];
-            ?></td>
+            <td><?php echo $row['batch']; ?></td>
 
             <td><?php echo "<a href='./edit-student.php?rollno=" . $row['stu_rollno'] ."'><i class='fa-solid fa-pen-to-square tooltipped' data-position='top' data-tooltip='Edit'></i></a>";?></td>
             <td><?php echo "<a href='./student-info.php?rollno=" . $row['stu_rollno'] ."'><i class='fa-solid fa-eye tooltipped' data-position='top' data-tooltip='View'></i></a>";?></td>

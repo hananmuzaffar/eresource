@@ -26,19 +26,23 @@ function year(){
 // Batch Function
 function batch(){
 ?>
-<select name="batch" id="batch" required>
-	<option value="" selected disabled>-- select batch --</option>
-	<?php
-		$y=(int)date('Y');
-		?>
-		<option value="<?php echo $y;?>"><?php echo $y;?></option>
+<div class="row">
+	<div class="input-field col s12">
+		<select name="batch" id="batch" required>
+			<option value="" selected disabled>-- select batch --</option>
 			<?php
-			$y--;
-		for(; $y>'2015'; $y--)
-		{
-	?>
-	<option value="<?php echo $y;?>"><?php echo $y;?></option>
-	<?php }?>
-</select>
-<label for="batch">Select Batch:</label>
+				$y=(int)date('Y');
+			?>
+			<option value="<?php echo $y;?>"><?php echo $y;?></option>
+			<?php
+				$y--;
+				for(; $y>'2015'; $y--)
+				{
+			?>
+			<option value="<?php echo $y;?>"><?php echo $y;?></option>
+			<?php }?>
+		</select>
+		<label for="batch">Select Batch:</label>
+	</div>
+</div>
 <?php } ?>

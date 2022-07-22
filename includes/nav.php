@@ -65,7 +65,7 @@
         <nav class="blue">
 			<div class="nav-wrapper">
 				<a href="/eresource/welcome.php" class="brand-logo hide-on-med-and-down" style="margin-left: 420px" title="ICSC eResources"><img src="<?php echo $site_logo ?>" style="margin-top:10px; width:200px; height:40px;"></a>
-				<a href="/eresource/welcome.php" class="brand-logo center hide-on-large-only" title="ICSC eResources"><img src="<?php echo $site_logo ?>" style="margin-top:10px; width:200px; height:40px;"></a>
+                <a href="/eresource/welcome.php" class="brand-logo center hide-on-large-only" title="ICSC eResources"><img src="<?php echo $site_logo ?>" style="margin-top:10px; width:200px; height:40px;"></a>
 				<a href="#" data-target="eresource-mobile-nav" class="top-nav sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul class="sidenav sidenav-fixed right hide-on-med-and-down">
 					    <li><div class="user-view">

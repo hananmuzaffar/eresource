@@ -9,8 +9,8 @@ if($_SESSION["isAdmin"] == 1): ?>
 <?php
 $sql = "SELECT * FROM students";
 if( isset($_GET['search']) ){
-    $name = $rollno = mysqli_real_escape_string($link, htmlspecialchars($_GET['search']));
-    $sql = "SELECT * FROM students WHERE stu_name LIKE '%$name%' or stu_rollno LIKE '$rollno'";
+    $name = $rollno = $batch = mysqli_real_escape_string($link, htmlspecialchars($_GET['search']));
+    $sql = "SELECT * FROM students WHERE stu_name LIKE '%$name%' OR stu_rollno LIKE '$rollno' OR batch LIKE '%$batch'";
 }
 $result = $link->query($sql);
 ?>
@@ -19,13 +19,16 @@ $result = $link->query($sql);
         <h4 class="center">Search Results for <strong><?php echo $_GET["search"]; ?></strong></h4>
     </div>
 <?php include_once '../includes/stu-search-form.php' ?>
-<table class="highlight">
+<table class="centered highlight">
 <tr>
 <th hidden>ID</th>
     <th>Roll no.</th>
     <th>Student name</th>
     <th>Course</th>
     <th>Batch</th>
+    <th colspan="3">Action</th>
+
+
 <?php while($row = $result->fetch_assoc()): ?>
     <tr>
         <td hidden><?php echo $row["stu_id"]; ?></td>
@@ -39,11 +42,7 @@ $result = $link->query($sql);
                 echo $course_row['course_name'];
             ?></td>
 
-            <td><?php
-              $batch_sql = mysqli_query($link, "SELECT * From batch JOIN students ON batch.batch_id = students.batch_id WHERE stu_rollno=".$row['stu_rollno']);
-              $batch_row = mysqli_fetch_array($batch_sql);
-                echo $batch_row['batch_name'] ;
-            ?></td>
+            <td><?php echo $row['batch'] ; ?></td>
 
             <td><?php echo "<a href='./edit-student.php?rollno=" . $row['stu_rollno'] ."'><i class='fa-solid fa-pen-to-square tooltipped' data-position='top' data-tooltip='Edit'></i></a>";?></td>
             <td><?php echo "<a href='./student-info.php?rollno=" . $row['stu_rollno'] ."'><i class='fa-solid fa-eye tooltipped' data-position='top' data-tooltip='View'></i></a>";?></td>

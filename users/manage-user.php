@@ -21,6 +21,7 @@ $rs_result = $link->query($sql);
     <th hidden>ID</th>
     <th>Name</th>
     <th>Department</th>
+    <th colspan="3">Action</th>
 
 </tr>
     </thead>

@@ -34,7 +34,7 @@ $uploaded_on = date("Y-m-d");
 include_once 'db.php';
 
 //insert form data in the database
-$insert = $link->query("INSERT INTO papers (paper_name,batch_id,course_id,semester,exam_year,paper_type,paper_file,user_id,paper_uploaded_on) VALUES ('".$name."','".$batch."','".$course."','".$semester."','".$exam_year."','".$paper_type."','".$path."','".$uploader."','".$uploaded_on."')");
+$insert = $link->query("INSERT INTO papers (paper_name,batch,course_id,semester,exam_year,paper_type,paper_file,user_id,paper_uploaded_on) VALUES ('".$name."','".$batch."','".$course."','".$semester."','".$exam_year."','".$paper_type."','".$path."','".$uploader."','".$uploaded_on."')");
 header('Location: ../papers/manage-paper.php');
 }
 } 

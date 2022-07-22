@@ -2,7 +2,7 @@
 // Initialize the session
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him to welcome page
+// Check if the user is already logged in, if yes then redirect to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: welcome.php");
     exit;
@@ -89,35 +89,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
-<?php include_once 'includes/login-nav.php' ?>
-<main>
-        <div class="container">
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Department Login</title>
+        <?php include_once 'includes/login-nav.php' ?>
+        
+        <main>
             <div class="container">
-                <br>
-                <div class="center">
-        <h3 class="col s12 m12 l12 card-panel orange lighten-4 collection-item orange-text text-darken-3">Department Login</h3>
-        </div>
-        <br>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="input-field col s12 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <i class="fas fa-user prefix"></i>
-                <input type="text" name="username" class="validate" id="username" value="<?php echo $username; ?>" placeholder="Enter username" required />
-                <label for="username">Username</label>
-                <span class="help-block red-text"><?php echo $username_err; ?></span>
+                <div class="container">
+                    <br>
+                    <div class="center">
+                        <h3 class="col s12 m12 l12 card-panel orange lighten-4 collection-item orange-text text-darken-3">Department Login</h3>
+                    </div>
+                    <br>
+
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="input-field col s12 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                            <i class="fas fa-user prefix"></i>
+                            <input type="text" name="username" class="validate" id="username" value="<?php echo $username; ?>" placeholder="Enter username" required />
+                            <label for="username">Username</label>
+                            <span class="help-block red-text"><?php echo $username_err; ?></span>
+                        </div>
+                        <br>
+
+                        <div class="input-field col s12 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                            <i class="fas fa-lock prefix"></i>
+                            <input type="password" name="password" class="validate" id="password" placeholder="Enter password" required />
+                            <label for="password">Password</label>
+                            <span class="help-block red-text"><?php echo $password_err; ?></span>
+                        </div>
+                        <br>
+
+                        <div class="input field center">
+                            <button class="btn waves-effect waves-light" type="submit" value="Login"><i class="fas fa-sign-in-alt left fa-lg"></i> Login </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <br>
-            <div class="input-field col s12 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <i class="fas fa-lock prefix"></i>
-                <input type="password" name="password" class="validate" id="password" placeholder="Enter password" required />
-                <label for="password">Password</label>
-                <span class="help-block red-text"><?php echo $password_err; ?></span>
-            </div>
-            <br>
-            <div class="input field center">
-            <button class="btn waves-effect waves-light" type="submit" value="Login"><i class="fas fa-sign-in-alt left fa-lg"></i> Login </button>
-            </div>
-        </form>
-    </div>
-    </div>
-    </main>
-<?php include_once 'includes/footer.php' ?>
+        </main>
+        <?php include_once 'includes/footer.php' ?>

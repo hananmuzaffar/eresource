@@ -1,18 +1,18 @@
-<?php include '../candidate/stu-process/stu-auth.php';?>
+<?php require_once "../candidate/stu-process/stu-auth.php";?>
 <!DOCTYPE HTML>
 <html>
 <head>
 <title>Syllabuses</title>
 <?php include_once 'stu-includes/stu-nav.php' ?>
-<?php include "../process/db.php" ?>
+<?php require_once "../process/db.php" ?>
 <div class="container">
     <div class="row">
         <h3 class="center">Syllabus</h3>
     </div>
 <?php
 $course = $_SESSION["course_id"];
-$batch = $_SESSION["batch_id"];
-$sql = "SELECT * FROM syllabus WHERE course_id = $course AND batch_id = $batch ORDER BY syl_uploaded_on DESC"   ;
+$batch = $_SESSION["batch"];
+$sql = "SELECT * FROM syllabus WHERE course_id = $course AND batch = $batch ORDER BY syl_uploaded_on DESC"   ;
 $rs_result = $link->query($sql);
 ?> 
 
@@ -24,6 +24,7 @@ $rs_result = $link->query($sql);
             <th>Batch</th>
             <th>Course</th>
             <th>Uploaded on</th>
+            <th>Action</th>
         </tr>
     </thead>
 <?php while($row = $rs_result->fetch_assoc()): ?> 
@@ -33,11 +34,7 @@ $rs_result = $link->query($sql);
 
             <td><?php echo '<i class="fa-solid fa-file blue-text text-darken-4 left"></i>' . $row["syllabus_name"]; ?></td>
 
-            <td><?php
-                $batch_sql = mysqli_query($link, "SELECT * From batch JOIN syllabus ON batch.batch_id = syllabus.batch_id WHERE syllabus_id=".$row['syllabus_id']);
-                $batch_row = mysqli_fetch_array($batch_sql);
-                echo $batch_row['batch_name'];
-            ?></td>
+            <td><?php echo $row['batch']; ?></td>
 
             <td><?php
             $course_sql = mysqli_query($link, "SELECT * From courses JOIN syllabus ON courses.course_id = syllabus.course_id WHERE syllabus_id=".$row['syllabus_id']);

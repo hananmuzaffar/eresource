@@ -23,6 +23,7 @@ $rs_result = $link->query($sql);
             <th>Course</th>
             <th>Uploaded by</th>
             <th>Uploaded on</th>
+            <th>Action</th>
         </tr>
     </thead>
 <?php while($row = $rs_result->fetch_assoc()): ?> 
@@ -33,11 +34,7 @@ $rs_result = $link->query($sql);
             <td><strong><?php echo $row["notice"]; 
             // echo substr($row["notice"], 0, 50) . " ...";?></strong></td>
 
-            <td><?php
-                $batch_sql = mysqli_query($link, "SELECT * From batch JOIN notices ON batch.batch_id = notices.batch_id WHERE notice_id=".$row['notice_id']);
-                $batch_row = mysqli_fetch_array($batch_sql);
-                echo $batch_row['batch_name'];
-            ?></td>
+            <td><?php echo $row['batch']; ?></td>
 
             <td><?php
             $course_sql = mysqli_query($link, "SELECT * From courses JOIN notices ON courses.course_id = notices.course_id WHERE notice_id=".$row['notice_id']);
