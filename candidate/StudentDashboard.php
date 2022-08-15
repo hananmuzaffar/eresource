@@ -34,7 +34,7 @@
                     $course_sql = mysqli_query($link, "SELECT * FROM courses JOIN students ON courses.course_id = students.course_id WHERE students.stu_id = $id");
                     $course_row = mysqli_fetch_array($course_sql);
                     ?>
-                    <p class="purple accent-4 white-text" style="font-size: large ; padding: 5px 0 5px 10px; border-radius: 2px;"><i class="fa-solid fa-bell"></i>&nbsp;Latest Notifications for <?php echo $course_row['course_name']; ?></p>
+                    <p class="purple accent-4 white-text" style="font-size: large ; padding: 5px 0 5px 10px; border-radius: 7px 7px 0 0;"><i class="fa-solid fa-bell"></i>&nbsp;Latest Notifications for <?php echo $course_row['course_name']; ?></p>
                     <?php include_once 'stu-includes/notice.php'; ?>
                 </div>
             </div>

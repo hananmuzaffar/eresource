@@ -19,6 +19,6 @@
     <body class="grey lighten-4">
         <nav class="blue">
             <div class="nav-wrapper">
-                <a href="/" class="brand-logo center" title="ICSC eResources"><img src="/eresource/assets/images/icsc-logo.png" style="margin-top:10px; width:200px; height:40px;"></a>
+                <a href="/eresource" class="brand-logo center" title="ICSC eResources"><img src="/eresource/assets/images/icsc-logo.png" style="margin-top:10px; width:200px; height:40px;"></a>
             </div>
         </nav>
